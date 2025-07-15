@@ -2,9 +2,9 @@
 
 namespace Aindot\ProxySetup;
 
+use Illuminate\Support\Facades\URL;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Aindot\ProxySetup\Commands\ProxySetupCommand;
 
 class ProxySetupServiceProvider extends PackageServiceProvider
 {
@@ -17,9 +17,13 @@ class ProxySetupServiceProvider extends PackageServiceProvider
          */
         $package
             ->name('proxy-setup')
-            ->hasConfigFile()
-            ->hasViews()
-            ->hasMigration('create_proxy_setup_table')
-            ->hasCommand(ProxySetupCommand::class);
+            ->hasConfigFile();
+    }
+
+    public function bootingPackage(): void
+    {
+        if (config('proxy-setup.https')) {
+            URL::forceScheme('https');
+        }
     }
 }

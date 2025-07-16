@@ -1,12 +1,12 @@
 {
-    "name": "abdullah/proxy-setup",
+    "name": "aindot/proxy-setup",
     "description": "Force HTTPS links for your app if you are behind a proxy such as HAproxy.",
     "keywords": [
         "aindot",
         "laravel",
         "proxy-setup"
     ],
-    "homepage": "https://github.com/abdullah/proxy-setup",
+    "homepage": "https://github.com/aindot/proxy-setup",
     "license": "MIT",
     "authors": [
         {

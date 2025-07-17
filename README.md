@@ -1,5 +1,7 @@
 # Force HTTPS links for your app if you are behind a proxy such as HAproxy.
 
+[] Add Middleware to trust proxies IP's.
+
 You can install the package via composer:
 
 ```bash
